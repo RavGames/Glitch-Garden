@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3113843490614574076}
   - component: {fileID: 3113843490614574077}
   - component: {fileID: 3113843490614574051}
+  - component: {fileID: 70922701}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -147,6 +148,18 @@ MonoBehaviour:
   projectile: {fileID: 868614777417476658, guid: 997dc6c7f44e0aa438d6ec8028d6651a,
     type: 3}
   gun: {fileID: 3113843490321643111}
+--- !u!114 &70922701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3113843490614574072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064e30eb39833d54e805d6de15b10da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3113843490871834376
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3113843490871834376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3113843490614574079}
