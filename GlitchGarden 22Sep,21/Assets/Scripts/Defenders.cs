@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Defenders : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float starCost = 50f;
+    
+
+    public float GetStarCost()
     {
-        
+        return starCost;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TrophyStars(int amount)
     {
-        
+        FindObjectOfType<StarDisplay>().AddStars(amount);
     }
-}
+
+}//CLASS

@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1830854247}
   - component: {fileID: 1830854245}
   - component: {fileID: 1830854248}
+  - component: {fileID: 1644806048}
   m_Layer: 0
   m_Name: Trophy
   m_TagString: Untagged
@@ -196,6 +197,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064e30eb39833d54e805d6de15b10da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starCost: 30
+--- !u!114 &1644806048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874471083515888032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf0e957ddec6fe49869c41a4db586d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 60
+  particleEffect: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5,
+    type: 3}
+  period: 2
 --- !u!1 &874471083998348576
 GameObject:
   m_ObjectHideFlags: 0

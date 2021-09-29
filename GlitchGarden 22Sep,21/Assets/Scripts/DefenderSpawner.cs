@@ -8,13 +8,33 @@ public class DefenderSpawner : MonoBehaviour
 
     private void OnMouseDown()
     {
-        SpawnDefenders(GetMousePos());
+        AttemptToSpawnADenderAt(GetMousePos());
     }
+
+
+    private void AttemptToSpawnADenderAt(Vector2 gridPos)
+    {
+        
+        if(!defenders)
+        {
+            return;
+        }
+        float defendersCost = defenders.GetStarCost();
+        StarDisplay starDisplay = FindObjectOfType<StarDisplay>();
+
+        if (starDisplay.hasStars(defendersCost))
+        {
+            SpawnDefenders(gridPos);
+            starDisplay.SpendStars(defendersCost);
+        }
+    }
+
+
 
     private Vector2 GetMousePos()
     {
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Debug.Log("Current POs of mouse : " + mousePos);
+        //Debug.Log("Current POs of mouse : " + mousePos);
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 defenderPos = SnapToGrid(worldPos);
         return defenderPos;

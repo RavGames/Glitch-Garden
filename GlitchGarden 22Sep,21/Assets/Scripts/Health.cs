@@ -5,7 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float health = 100f;
-    [SerializeField] GameObject particleEffects;
+    [SerializeField] GameObject particleEffect;
+    private float period = 1f;
 
     public void ReduceHealth(float damage)
     {
@@ -15,16 +16,15 @@ public class Health : MonoBehaviour
         {
             ShowDeathEffect();
             Destroy(gameObject);
+            
         }
     }
 
     private void ShowDeathEffect()
     {
-        GameObject vfx = Instantiate(particleEffects,
-                                    transform.position,
-                                    Quaternion.identity) as GameObject;
-
-        Destroy(gameObject,2f);
+        if (!particleEffect) { return; }
+        GameObject vfx = Instantiate(particleEffect, transform.position, transform.rotation) as GameObject;
+        Destroy(vfx, period);
     }
 
 

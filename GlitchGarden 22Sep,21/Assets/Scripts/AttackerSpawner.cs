@@ -27,6 +27,7 @@ public class AttackerSpawner : MonoBehaviour
         Attacker newAttacker = Instantiate(attacker,
                                 transform.position,
                                 Quaternion.identity) as Attacker;
+        newAttacker.transform.parent = transform;
     }
 
 
