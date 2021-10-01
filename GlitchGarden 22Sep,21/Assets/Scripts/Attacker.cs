@@ -7,6 +7,27 @@ public class Attacker : MonoBehaviour
     private float speed = 0f;
     private GameObject currentDefender;
 
+    private void Awake()
+    {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if(levelController != null)
+        {
+            levelController.AttackersSpawned();
+        }
+        
+    }
+
+    private void OnDestroy()
+    {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if (levelController != null)
+        {
+            levelController.AttackersKilled();
+            levelController.HandleWinCondition();
+        }
+    }
+
+
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -47,6 +68,8 @@ public class Attacker : MonoBehaviour
             health.ReduceHealth(damage);
         }
     }
+
+   
 
 
 

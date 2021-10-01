@@ -37,5 +37,11 @@ public class AttackerSpawner : MonoBehaviour
         SpawnAttackers(attackers[attackerIndex]);
     }
 
-    
+
+    public void StopSpawning()
+    {
+        spawn = false;
+    }
+
+
 }//CLASS

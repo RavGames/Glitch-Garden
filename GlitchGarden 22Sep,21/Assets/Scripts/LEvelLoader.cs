@@ -40,8 +40,18 @@ public class LEvelLoader : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadNextLevel()
+    {
+        StartCoroutine(WaitTimeForNextScene());
+        
+    }
 
-
+    private IEnumerator WaitTimeForNextScene()
+    {
+        yield return new WaitForSeconds(waitTime);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
 
 
 }//CLASS
