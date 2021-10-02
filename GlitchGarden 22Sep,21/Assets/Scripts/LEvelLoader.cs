@@ -53,5 +53,21 @@ public class LEvelLoader : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
+    public void TryAgain()
+    {
+        Time.timeScale = 1;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("StartGame");
+    }
+
+    
+
+
 
 }//CLASS

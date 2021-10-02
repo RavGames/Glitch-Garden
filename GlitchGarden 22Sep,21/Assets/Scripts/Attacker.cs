@@ -69,7 +69,10 @@ public class Attacker : MonoBehaviour
         }
     }
 
-   
+   //public void DestroyAll()
+   // {
+   //     Destroy(gameObject);
+   // }
 
 
 

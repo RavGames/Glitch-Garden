@@ -50,13 +50,19 @@ public class LevelController : MonoBehaviour
 
     public void HandleWinCondition()
     {
-        if(noOfAttackers <= 0 && levelTimerEnd)
+        if(noOfAttackers <= 0 && levelTimerEnd && FindObjectOfType<DisplayLives>().GetTotalLives() > 0)
         {
             winCanvas.SetActive(true);
             FindObjectOfType<LEvelLoader>().LoadNextLevel();
         }
     }
 
+    public void HandleLoseCondition()
+    {
+        //FindObjectOfType<Attacker>().DestroyAll();
+        loseCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
 
 
     public void LevelTimerEnd()
