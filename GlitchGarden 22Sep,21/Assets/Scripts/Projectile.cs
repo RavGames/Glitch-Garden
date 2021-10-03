@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] float speed = 1f;
     [SerializeField] float damage = 50f;
+    [SerializeField] float timer = 3f;
 
 
     private void Update()
@@ -27,7 +28,7 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            return;
+            Destroy(gameObject, timer);
         }
         
     }

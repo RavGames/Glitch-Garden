@@ -66,7 +66,10 @@ public class LEvelLoader : MonoBehaviour
         SceneManager.LoadScene("StartGame");
     }
 
-    
+    public void Back()
+    {
+        SceneManager.LoadScene("StartGame");
+    }
 
 
 

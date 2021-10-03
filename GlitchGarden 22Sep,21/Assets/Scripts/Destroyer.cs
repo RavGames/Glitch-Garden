@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
+    [SerializeField] float damage = 1f;
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-       //if(otherCollider.gameObject.GetComponent<Attacker>())
-       // {
-       //     Destroy(otherCollider.gameObject);
-       // }
-
-       // Projectile projectile = otherCollider.gameObject.GetComponent<Projectile>();
-       // if(!projectile)
-       // {
-       //     return;
-       // }
-       // else
-       // {
-       //     Destroy(projectile);
-       // }
-
-        if(otherCollider.gameObject)
+       
+        if(otherCollider.gameObject.GetComponent<Attacker>())
         {
             Destroy(otherCollider.gameObject);
-            FindObjectOfType<DisplayLives>().LivesLost(1f);
+            FindObjectOfType<DisplayLives>().LivesLost(damage);
         }
 
 

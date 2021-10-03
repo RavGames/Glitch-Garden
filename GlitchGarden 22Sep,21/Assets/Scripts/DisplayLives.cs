@@ -7,15 +7,18 @@ using UnityEngine.UI;
 
 public class DisplayLives : MonoBehaviour
 {
-    
-    [SerializeField] float totalLives = 3f;
+    [SerializeField] float baseLifes = 5f;
+    [SerializeField] float totalLives = 0f;
     //[SerializeField] float damage = 1f;
 
     private Text livesText;
 
+    
 
     private void Start()
     {
+
+        totalLives = baseLifes;
         livesText = GetComponent<Text>();
         UpdateLives();
     }
