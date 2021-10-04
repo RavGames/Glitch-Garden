@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 4;
+        audioSource.volume = PPC.GetMasterVolume();
     }
 
     public void SetVolume(float vol)

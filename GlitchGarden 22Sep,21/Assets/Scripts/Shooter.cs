@@ -7,9 +7,24 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectile, gun;
     private AttackerSpawner myLaneSpawner;
 
+     GameObject parentProjetcile;
+    const string PARENT_PROJECTILE_KEY = "parentProjectile";
+
+
     private void Start()
     {
         SpawnAttackerLane();
+        CreateParentProjectile();
+    }
+
+    private void CreateParentProjectile()
+    {
+        parentProjetcile = GameObject.Find(PARENT_PROJECTILE_KEY);
+
+        if(!parentProjetcile)
+        {
+            parentProjetcile = new GameObject(PARENT_PROJECTILE_KEY);
+        }
     }
 
 
@@ -18,6 +33,7 @@ public class Shooter : MonoBehaviour
         GameObject bullet = Instantiate(projectile,
                             gun.transform.position,
                             Quaternion.identity) as GameObject;
+        bullet.transform.parent = parentProjetcile.transform;
     }
 
 

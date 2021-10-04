@@ -6,9 +6,28 @@ public class DefenderSpawner : MonoBehaviour
 {
      private Defenders defenders;
 
+    private GameObject defenderSpawnerParent;
+    private const string DEFENDERSPAWNER_PARENT = "defenderSpawnerParent";
+
+    private void Start()
+    {
+        CreateDefenderSpawnerParent();
+    }
+
     private void OnMouseDown()
     {
         AttemptToSpawnADenderAt(GetMousePos());
+        
+    }
+
+    private void CreateDefenderSpawnerParent()
+    {
+        defenderSpawnerParent = GameObject.Find(DEFENDERSPAWNER_PARENT);
+
+        if(!defenderSpawnerParent)
+        {
+            defenderSpawnerParent = new GameObject(DEFENDERSPAWNER_PARENT);
+        }
     }
 
 
@@ -52,6 +71,7 @@ public class DefenderSpawner : MonoBehaviour
         Defenders gameObject = Instantiate(defenders,
                                 pos, 
                                 Quaternion.identity) as Defenders;
+        gameObject.transform.parent = defenderSpawnerParent.transform;
     }
 
     public void SetSelectedDefender(Defenders defender)

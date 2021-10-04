@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DisplayLives : MonoBehaviour
 {
     [SerializeField] float baseLifes = 5f;
-    [SerializeField] float totalLives = 0f;
+    [SerializeField] float totalLives;
     //[SerializeField] float damage = 1f;
 
     private Text livesText;
@@ -18,7 +18,7 @@ public class DisplayLives : MonoBehaviour
     private void Start()
     {
 
-        totalLives = baseLifes;
+        totalLives = baseLifes - PPC.GetMasterDifficulty();
         livesText = GetComponent<Text>();
         UpdateLives();
     }
